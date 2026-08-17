@@ -43,8 +43,10 @@ occurred.
    durable HTTPS or IPFS asset before public deployment.
 6. Fees are estimates and can change with network configuration; fund the
    signer conservatively and rehearse on testnet.
-7. Acton 1.1.0 does not support native Windows. Use Linux, macOS, supported
-   Docker, or WSL; CI uses Ubuntu.
+7. The pinned Jetton v2.1 source currently targets Acton `trunk`, which is a
+   preview toolchain and has no native Windows support. Upstream source is
+   commit-pinned and CI uses Ubuntu, but a future release must revalidate the
+   compiler/toolchain pin before deployment.
 
 ## Release gate before testnet
 
