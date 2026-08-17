@@ -21,7 +21,7 @@ const JETTON_DEFAULT_TRANSFER_AMOUNT = "10000000000"
 const JETTON_DEFAULT_BURN_AMOUNT = "10000000000"
 
 fun assertTestnetOnly() {
-    val configuredNetwork = env<string>("TON_NETWORK");
+    val configuredNetwork = env<string>("TON_NETWORK") ?? "";
     assert (configuredNetwork == "testnet") throw 9001;
 }
 

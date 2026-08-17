@@ -1,4 +1,6 @@
 import "@acton/emulation/scripts"
+import "@acton/io"
+import "@acton/prompts"
 import "utils/common"
 
 fun main() {

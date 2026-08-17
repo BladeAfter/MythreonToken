@@ -1,5 +1,7 @@
-import "@acton/env"
+import "@acton/io"
 import "utils/common"
+import "../contracts/storage"
+import "../wrappers/JettonMinter.gen"
 
 fun main() {
     assertTestnetOnly();
@@ -10,10 +12,10 @@ fun main() {
     val symbol = readOnchainMetadataField(metadata, "symbol".sha256());
     val decimals = readOnchainMetadataField(metadata, "decimals".sha256());
     val description = readOnchainMetadataField(metadata, "description".sha256());
-    val valid = name == JETTON_DEFAULT_NAME &&
-        symbol == JETTON_DEFAULT_SYMBOL &&
-        decimals == JETTON_DEFAULT_DECIMALS &&
-        description == JETTON_DEFAULT_DESCRIPTION;
+    val valid = name != null && name! == JETTON_DEFAULT_NAME &&
+        symbol != null && symbol! == JETTON_DEFAULT_SYMBOL &&
+        decimals != null && decimals! == JETTON_DEFAULT_DECIMALS &&
+        description != null && description! == JETTON_DEFAULT_DESCRIPTION;
     println("Token: {}", name);
     println("Symbol: {}", symbol);
     println("Decimals: {}", decimals);
