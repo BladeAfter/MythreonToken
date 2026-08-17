@@ -4,6 +4,7 @@ import "@acton/io"
 import "@acton/prompts"
 import "@acton/emulation/network"
 import "@acton/emulation/scripts"
+import "@stdlib/strings"
 import "../../contracts/storage"
 import "../../wrappers/JettonMinter.gen"
 import "../../wrappers/JettonWallet.gen"
@@ -22,7 +23,7 @@ const JETTON_DEFAULT_BURN_AMOUNT = "10000000000"
 
 fun assertTestnetOnly() {
     val configuredNetwork = env<string>("TON_NETWORK") ?? "";
-    assert (configuredNetwork == "testnet") throw 9001;
+    assert (configuredNetwork.equalTo("testnet")) throw 9001;
 }
 
 struct JettonMetadata {
