@@ -245,4 +245,3 @@ get fun `test validation: minter cannot force transfer tokens`() {
     );
     expect(ok).toHaveSuccessfulTx<AskToTransfer>({ from: notDeployer.address, to: wallet.address });
 }
-

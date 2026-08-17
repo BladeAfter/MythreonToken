@@ -27,4 +27,3 @@ fun calcAddressOfJettonWallet(
     val jwDeployed = calcDeployedJettonWallet(ownerAddress, minterAddress, jettonWalletCode);
     return jwDeployed.calculateAddress();
 }
-

@@ -1,7 +1,7 @@
 import "@acton/io"
+import "@acton/prompts"
 import "@acton/emulation/network"
 import "@acton/emulation/scripts"
-import "@acton/prompts"
 import "utils/common"
 import "../wrappers/utils"
 
@@ -15,7 +15,13 @@ fun main() {
         admin.address,
     );
 
-    if (!confirm("Start two-step MYTH admin change on TESTNET?", false, "New admin must claim separately")) {
+    if (
+        !confirm(
+            "Start two-step MYTH admin change on TESTNET?",
+            false,
+            "New admin must claim separately",
+        )
+    ) {
         return;
     }
 

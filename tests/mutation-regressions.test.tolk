@@ -1028,4 +1028,3 @@ get fun `test mutation: minter mint fees should follow forward gas and storage c
         exitCode: ERROR_NOT_ENOUGH_GAS,
     });
 }
-

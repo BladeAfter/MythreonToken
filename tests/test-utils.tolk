@@ -255,4 +255,3 @@ fun TlbCommonMessageInfo.toInternal(self): TlbInternalMessage {
         }
     }
 }
-

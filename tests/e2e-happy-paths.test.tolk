@@ -213,4 +213,3 @@ get fun `test jetton e2e bench: stage 5 full minter and wallet flow`() {
     updateMetadataAndDiscoverWalletStage(ctx);
     handOffAdminStage(ctx);
 }
-

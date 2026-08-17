@@ -246,4 +246,3 @@ get fun `test wallet: cannot burn more jettons than balance`() {
     expect(wallet.getJettonBalance()).toEqual(balanceBefore);
     expect(minter.getTotalSupply()).toEqual(supplyBefore);
 }
-
