@@ -112,19 +112,20 @@ name        Mythreon Token
 symbol      MYTH
 decimals    9
 description The official ecosystem token of Mythreon.
-image       https://assets.example.invalid/mythreon/myth-token.png
+image       https://raw.githubusercontent.com/BladeAfter/MythreonToken/58abd3a41f0e8456646c549ea16928b0995b0168/metadata/myth-token-icon-wallet.png
 ```
 
 The owner-supplied source artwork is stored at `metadata/myth-token-icon.png`.
 The wallet-safe adaptation used by the token metadata is
 `metadata/myth-token-icon-wallet.png`; it preserves the approved dragon and
 gold Mythreon M while filling the square corners and adding safe framing for
-circular wallet crops. The on-chain image field remains an HTTPS placeholder
-using the reserved `.invalid` domain because TON wallets cannot resolve a
-repository path. Publish the exact wallet-safe asset at a durable HTTPS or IPFS
-location and replace `JETTON_IMAGE` before deployment; localhost and Lovable
-URLs are rejected by project checks. A matching external representation is in
-`metadata/jetton.json`.
+circular wallet crops. The on-chain image field uses a commit-pinned GitHub Raw
+URL whose downloaded SHA-256 matches the reviewed wallet-safe asset. This URL
+is immutable for testnet validation and resolvable by TON wallets and explorers.
+For mainnet, migrate the exact same bytes to project-controlled durable HTTPS
+or IPFS hosting after a separate infrastructure review. Localhost, Lovable, and
+reserved `.invalid` URLs are rejected by project checks. A matching external
+representation is in `metadata/jetton.json`.
 
 ## Testnet configuration
 

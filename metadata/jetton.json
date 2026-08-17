@@ -3,6 +3,6 @@
   "symbol": "MYTH",
   "decimals": "9",
   "description": "The official ecosystem token of Mythreon.",
-  "image": "https://assets.example.invalid/mythreon/myth-token.png",
+  "image": "https://raw.githubusercontent.com/BladeAfter/MythreonToken/58abd3a41f0e8456646c549ea16928b0995b0168/metadata/myth-token-icon-wallet.png",
   "image_local_asset": "./myth-token-icon-wallet.png"
 }

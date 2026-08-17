@@ -17,8 +17,9 @@ SHA-256 checksums:
 - Original: `71A5F5DDB60BC9D7156FFBB7BC09DCE56205DCE69F03EFD5887FA1C99C19ACD0`
 - Wallet-safe: `9F2B4D989C870C1DCFABC15FB02F7B3441646222F18533034459AAE2287648F1`
 
-Before testnet deployment, publish the wallet-safe file at a durable HTTPS
-or IPFS URL, verify the downloaded SHA-256, and replace `JETTON_IMAGE` plus the
-placeholder `image` values in `config/token.json` and `metadata/jetton.json`.
-Local paths must not be written into TEP-64 on-chain metadata because external
-wallets and explorers cannot resolve repository files.
+For testnet, metadata uses a commit-pinned GitHub Raw URL. Its downloaded
+SHA-256 was verified against the wallet-safe checksum above. For mainnet,
+publish the exact same bytes through project-controlled durable HTTPS or IPFS
+hosting after a separate review. Local paths must not be written into TEP-64
+on-chain metadata because external wallets and explorers cannot resolve
+repository files.

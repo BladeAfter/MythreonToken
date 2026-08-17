@@ -28,7 +28,7 @@ const metadata = JSON.parse(readFileSync('metadata/jetton.json', 'utf8'));
 for (const [key, expected] of Object.entries({ name: 'Mythreon Token', symbol: 'MYTH', decimals: '9', description: 'The official ecosystem token of Mythreon.' })) {
   if (metadata[key] !== expected) failures.push(`metadata.${key} is invalid`);
 }
-if (!metadata.image.startsWith('https://') || /localhost|lovable/i.test(metadata.image)) failures.push('metadata.image must be a non-local HTTPS URL');
+if (!metadata.image.startsWith('https://') || /localhost|lovable|\.invalid(?:\/|$)/i.test(metadata.image)) failures.push('metadata.image must be a durable non-local HTTPS URL');
 
 const iconPath = join('metadata', metadata.image_local_asset);
 const expectedIconSha256 = '9F2B4D989C870C1DCFABC15FB02F7B3441646222F18533034459AAE2287648F1';
