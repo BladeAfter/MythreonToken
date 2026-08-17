@@ -1,0 +1,24 @@
+{
+  "name": "mythreon-token",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MYTH TEP-74 Jetton contracts and operational tooling",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "acton build",
+    "test": "node scripts/run-quality.mjs test",
+    "test:units": "node --test tests-js/*.test.mjs",
+    "test:contracts": "acton test tests",
+    "lint": "node scripts/run-quality.mjs lint",
+    "check": "node scripts/run-quality.mjs all",
+    "deploy:testnet": "node scripts/run-operation.mjs deploy",
+    "mint:testnet": "node scripts/run-operation.mjs mint",
+    "transfer:testnet": "node scripts/run-operation.mjs transfer",
+    "burn:testnet": "node scripts/run-operation.mjs burn",
+    "verify:testnet": "node scripts/run-operation.mjs verify",
+    "wallet:testnet": "node scripts/run-operation.mjs wallet"
+  }
+}

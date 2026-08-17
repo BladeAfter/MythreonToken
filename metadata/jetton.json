@@ -1,0 +1,8 @@
+{
+  "name": "Mythreon Token",
+  "symbol": "MYTH",
+  "decimals": "9",
+  "description": "The official ecosystem token of Mythreon.",
+  "image": "https://assets.example.invalid/mythreon/myth-token.png",
+  "image_local_asset": "./myth-token-icon.png"
+}

@@ -1,0 +1,48 @@
+[package]
+name = "mythreon-token"
+description = "Official Mythreon Token (MYTH) — TON TEP-74 Jetton"
+version = "0.1.0"
+license = "MIT"
+
+[toolchain]
+acton = "1.1.0"
+
+[contracts.JettonMinter]
+src = "contracts/JettonMinter.tolk"
+
+[[contracts.JettonMinter.depends]]
+name = "JettonWallet"
+kind = "embed_code"
+function = "jettonWalletCompiledCode"
+
+[contracts.JettonWallet]
+src = "contracts/JettonWallet.tolk"
+depends = []
+
+[test.mutation]
+minimum-percent = 75.0
+
+[lint]
+max-warnings = 0
+
+[lint.rules]
+dict-type-use = "allow"
+throw-requires-errors-enum = "allow"
+
+[fmt]
+width = 100
+ignore = []
+
+[build]
+output-fift = "build/fift"
+
+[scripts]
+test-contracts = "acton test tests"
+verify-format = "acton fmt --check"
+
+[import-mappings]
+acton = ".acton"
+contracts = "contracts"
+gen = "gen"
+tests = "tests"
+wrappers = "wrappers"

@@ -1,0 +1,25 @@
+# Acton outputs and local state
+.acton/
+build/
+coverage/
+*.boc
+*.fif
+wallets.toml
+global.wallets.toml
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.seed
+*mnemonic*
+
+# Tooling
+node_modules/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+npm-debug.log*
