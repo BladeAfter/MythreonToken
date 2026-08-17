@@ -5,6 +5,7 @@ import "@acton/types/transaction"
 import "test-utils"
 import "../contracts/errors"
 import "../contracts/messages"
+import "../wrappers/JettonMinter.gen"
 import "../wrappers/JettonWallet.gen"
 import "../wrappers/utils"
 
