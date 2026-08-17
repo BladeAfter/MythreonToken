@@ -95,4 +95,3 @@ fun checkAmountIsEnoughToBurn(msgValue: int) {
     val minBurnAmount = calcMinimalBurnAmount();
     assert (msgValue > minBurnAmount) throw ERROR_NOT_ENOUGH_GAS;
 }
-

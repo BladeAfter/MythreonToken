@@ -109,4 +109,3 @@ fun ForwardPayloadRemainder.checkIsCorrectTlbEither(self) {
         mutableCopy.assertEnd();
     }
 }
-

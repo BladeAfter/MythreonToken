@@ -169,4 +169,3 @@ get fun get_wallet_data(): JettonWalletDataReply {
         jettonWalletCode: contract.getCode(),
     };
 }
-

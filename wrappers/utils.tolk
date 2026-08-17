@@ -284,4 +284,3 @@ fun JettonWallet.sendBurn(
     });
     return net.send(from, outMessage);
 }
-

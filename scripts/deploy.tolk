@@ -1,3 +1,5 @@
+import "@acton/io"
+import "@acton/prompts"
 import "@acton/emulation/scripts"
 import "utils/common"
 

@@ -1,3 +1,4 @@
+import "@stdlib/strings"
 import "@acton/env"
 import "@acton/fmt"
 import "@acton/io"
@@ -12,7 +13,7 @@ import "../../wrappers/utils"
 const JETTON_DEFAULT_NAME = "Mythreon Token"
 const JETTON_DEFAULT_SYMBOL = "MYTH"
 const JETTON_DEFAULT_DESCRIPTION = "The official ecosystem token of Mythreon."
-const JETTON_DEFAULT_IMAGE = "https://assets.example.invalid/mythreon/myth-token.png"
+const JETTON_DEFAULT_IMAGE = "https://raw.githubusercontent.com/BladeAfter/MythreonToken/58abd3a41f0e8456646c549ea16928b0995b0168/metadata/myth-token-icon-wallet.png"
 const JETTON_DEFAULT_DECIMALS = "9"
 const JETTON_DEFAULT_UPDATED_DESCRIPTION = "Sample jetton (metadata updated from acton-contracts scripts)"
 
@@ -21,8 +22,8 @@ const JETTON_DEFAULT_TRANSFER_AMOUNT = "10000000000"
 const JETTON_DEFAULT_BURN_AMOUNT = "10000000000"
 
 fun assertTestnetOnly() {
-    val configuredNetwork = env<string>("TON_NETWORK");
-    assert (configuredNetwork == "testnet") throw 9001;
+    val configuredNetwork = env<string>("TON_NETWORK") ?? "";
+    assert (configuredNetwork.equalTo("testnet")) throw 9001;
 }
 
 struct JettonMetadata {

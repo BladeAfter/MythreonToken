@@ -1,6 +1,9 @@
+import "@acton/io"
+import "@acton/prompts"
 import "@acton/emulation/network"
 import "@acton/emulation/scripts"
 import "utils/common"
+import "../wrappers/JettonMinter.gen"
 import "../wrappers/JettonWallet.gen"
 import "../wrappers/utils"
 
@@ -17,7 +20,9 @@ fun main() {
     println("ACTION=BURN");
     println("OWNER={}", owner.address);
     println("BURN_BASE_UNITS={}", burnAmount);
-    if (!confirm("Confirm MYTH burn on TESTNET?", false, "This reduces holder balance and supply")) {
+    if (
+        !confirm("Confirm MYTH burn on TESTNET?", false, "This reduces holder balance and supply")
+    ) {
         return;
     }
     val wallet = JettonWallet { address: minter.getWalletAddress(owner.address) };

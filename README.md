@@ -17,7 +17,7 @@ as `NOT DEPLOYED` until an authorized testnet transaction succeeds.
 | Standard | TEP-74 Jetton |
 | Implementation | TON Acton Jetton v2.1 |
 | Language | Tolk |
-| Toolchain | Acton 1.1.0 |
+| Toolchain | Acton trunk, matching the pinned Jetton v2.1 source |
 | Decimals | 9 |
 | Planned final supply | 100,000,000 MYTH |
 | Initial supply at deploy | 0 MYTH |
@@ -47,15 +47,18 @@ Standards:
 ## Requirements
 
 - Node.js 20 or newer (helpers and launch guards).
-- Acton 1.1.0 on supported Linux/macOS. Native Windows is not supported by
-  Acton; use Ubuntu 22+ in WSL, Docker, or the included Ubuntu GitHub Actions
-  job.
+- Acton `trunk` on supported Linux/macOS, matching the toolchain declared by
+  the pinned official `acton-contracts/jetton-v2.1` source. Native Windows is
+  not supported by Acton; use Ubuntu 22+ in WSL, Docker, or the included Ubuntu
+  GitHub Actions job. `trunk` is a preview toolchain, so the upstream commit is
+  pinned and CI is the release gate.
 - No npm runtime dependencies are required.
 
 Install Acton from its official release, then verify it:
 
 ```sh
-curl -LsSf https://github.com/ton-blockchain/acton/releases/download/v1.1.0/acton-installer.sh | sh
+curl -LsSf https://github.com/ton-blockchain/acton/releases/latest/download/acton-installer.sh | sh
+acton up --trunk
 acton --version
 npm ci
 ```
@@ -109,15 +112,20 @@ name        Mythreon Token
 symbol      MYTH
 decimals    9
 description The official ecosystem token of Mythreon.
-image       https://assets.example.invalid/mythreon/myth-token.png
+image       https://raw.githubusercontent.com/BladeAfter/MythreonToken/58abd3a41f0e8456646c549ea16928b0995b0168/metadata/myth-token-icon-wallet.png
 ```
 
-The reviewed local artwork is stored at `metadata/myth-token-icon.png`. The
-on-chain image field remains an HTTPS placeholder using the reserved `.invalid`
-domain because TON wallets cannot resolve a repository path. Publish the exact
-asset at a durable HTTPS or IPFS location and replace `JETTON_IMAGE` before
-deployment; localhost and Lovable URLs are rejected by project checks. A
-matching external representation is in `metadata/jetton.json`.
+The owner-supplied source artwork is stored at `metadata/myth-token-icon.png`.
+The wallet-safe adaptation used by the token metadata is
+`metadata/myth-token-icon-wallet.png`; it preserves the approved dragon and
+gold Mythreon M while filling the square corners and adding safe framing for
+circular wallet crops. The on-chain image field uses a commit-pinned GitHub Raw
+URL whose downloaded SHA-256 matches the reviewed wallet-safe asset. This URL
+is immutable for testnet validation and resolvable by TON wallets and explorers.
+For mainnet, migrate the exact same bytes to project-controlled durable HTTPS
+or IPFS hosting after a separate infrastructure review. Localhost, Lovable, and
+reserved `.invalid` URLs are rejected by project checks. A matching external
+representation is in `metadata/jetton.json`.
 
 ## Testnet configuration
 

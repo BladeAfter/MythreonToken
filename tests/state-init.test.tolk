@@ -91,4 +91,3 @@ get fun `test state: wallet storage and init-state bounds should match fee const
     expect(initBits).toBeGreater(0);
     expect(initCells).toBeGreater(0);
 }
-

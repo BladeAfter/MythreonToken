@@ -1,5 +1,6 @@
-import "@acton/env"
+import "@acton/io"
 import "utils/common"
+import "../wrappers/JettonMinter.gen"
 
 fun main() {
     assertTestnetOnly();

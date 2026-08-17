@@ -131,4 +131,3 @@ get fun `test wallet restores balance on burn_notification bounce`() {
 
     expect(wallet.getJettonBalance()).toEqual(balanceBefore);
 }
-

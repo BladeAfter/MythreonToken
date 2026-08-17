@@ -49,4 +49,3 @@ struct (0x00) OnchainMetadataReply {
 struct (0x00) SnakeDataReply {
     string: string
 }
-

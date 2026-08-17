@@ -349,4 +349,3 @@ get fun `test shard: wallet address should keep owner shard prefix in get/discov
         prefix += 1;
     }
 }
-

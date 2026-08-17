@@ -540,4 +540,3 @@ get fun `test gas: wallet storage fee should be measurable`() {
     expect(storageFee).toBeGreater(0);
     expect(calculateJettonWalletMinStorageFee()).toBeGreater(0);
 }
-

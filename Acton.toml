@@ -5,7 +5,7 @@ version = "0.1.0"
 license = "MIT"
 
 [toolchain]
-acton = "1.1.0"
+acton = "trunk"
 
 [contracts.JettonMinter]
 src = "contracts/JettonMinter.tolk"
@@ -28,6 +28,8 @@ max-warnings = 0
 [lint.rules]
 dict-type-use = "allow"
 throw-requires-errors-enum = "allow"
+# Preserve import paths in the pinned upstream Jetton v2.1 sources and generated wrappers.
+import-path-can-use-mappings = "allow"
 
 [fmt]
 width = 100
