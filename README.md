@@ -115,12 +115,16 @@ description The official ecosystem token of Mythreon.
 image       https://assets.example.invalid/mythreon/myth-token.png
 ```
 
-The reviewed local artwork is stored at `metadata/myth-token-icon.png`. The
-on-chain image field remains an HTTPS placeholder using the reserved `.invalid`
-domain because TON wallets cannot resolve a repository path. Publish the exact
-asset at a durable HTTPS or IPFS location and replace `JETTON_IMAGE` before
-deployment; localhost and Lovable URLs are rejected by project checks. A
-matching external representation is in `metadata/jetton.json`.
+The owner-supplied source artwork is stored at `metadata/myth-token-icon.png`.
+The wallet-safe adaptation used by the token metadata is
+`metadata/myth-token-icon-wallet.png`; it preserves the approved dragon and
+gold Mythreon M while filling the square corners and adding safe framing for
+circular wallet crops. The on-chain image field remains an HTTPS placeholder
+using the reserved `.invalid` domain because TON wallets cannot resolve a
+repository path. Publish the exact wallet-safe asset at a durable HTTPS or IPFS
+location and replace `JETTON_IMAGE` before deployment; localhost and Lovable
+URLs are rejected by project checks. A matching external representation is in
+`metadata/jetton.json`.
 
 ## Testnet configuration
 
